@@ -1,0 +1,448 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+section {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#01082b, #080234);
+    overflow: hidden;
+}
+
+/* Stars */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(img/stars.jpg);
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Moon */
+section .moon {
+    position: absolute;
+    top: 10px;
+    width: 175px;
+    height: 175px;
+    background: transparent;
+    border-left: 15px solid #fff;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    z-index: 5;
+    animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-45deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(-45deg);
+    }
+}
+
+/* Text */
+section .text h1 {
+    position: relative;
+    text-align: center;
+    font-size: 150px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    font-family: 'Tangerine', cursive;
+    z-index: 5;
+    animation: glow 2s infinite alternate ease-in-out;
+    margin-bottom: 20px;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+
+    100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+}
+
+section .text h1 span {
+    position: absolute;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+/* Wishes Section */
+.wishes {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    margin-top: 40px;
+    z-index: 5;
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideInWishes 2s ease-in-out forwards, fadeInWishes 2s ease-in-out forwards;
+}
+
+.wishes-content {
+    position: relative;
+    z-index: 2;
+}
+
+.wishes p {
+    margin: 15px 0;
+    line-height: 1.6;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInParagraph 1s ease-in-out forwards;
+}
+
+.wishes p:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.wishes p:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.wishes p:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+.wishes p:nth-child(4) {
+    animation-delay: 2s;
+}
+
+.wishes p strong {
+    color: #ffd700;
+    font-weight: 600;
+}
+
+.wishes:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes slideInWishes {
+    0% {
+        transform: translateY(50px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInWishes {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInParagraph {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stars */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #fff;
+    border-radius: 50%;
+    animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Confetti */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: confettiFall 3s ease-in-out;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Lanterns */
+.lanterns {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.lantern {
+    position: absolute;
+    width: 50px;
+    height: 80px;
+    background: url(img/1.png) no-repeat center/contain;
+    animation: floatLantern 10s infinite ease-in-out;
+}
+
+.lantern:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.lantern:nth-child(2) {
+    left: 40%;
+    animation-delay: 3s;
+}
+
+.lantern:nth-child(3) {
+    left: 70%;
+    animation-delay: 6s;
+}
+
+@keyframes floatLantern {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+
+
+/* Particles.js Canvas */
+.particles-js-canvas-el {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1150px) {
+    section .moon {
+        width: 150px;
+        height: 150px;
+        border-left: 12px solid #fff;
+    }
+
+    section .text h1 {
+        font-size: 130px;
+    }
+
+    section .text h1 span {
+        font-size: 20px;
+    }
+
+    .wishes {
+        font-size: 22px;
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 900px) {
+    section .text h1 {
+        font-size: 120px;
+    }
+
+    .wishes {
+        font-size: 20px;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    section .moon {
+        width: 120px;
+        height: 120px;
+        border-left: 10px solid #fff;
+    }
+
+    section .text h1 {
+        font-size: 100px;
+    }
+
+    section .text h1 span {
+        font-size: 18px;
+    }
+
+    .wishes {
+        font-size: 18px;
+        max-width: 500px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    section .moon {
+        width: 100px;
+        height: 100px;
+        border-left: 8px solid #fff;
+    }
+
+    section .text h1 {
+        font-size: 80px;
+    }
+
+    section .text h1 span {
+        font-size: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .wishes {
+        font-size: 16px;
+        max-width: 400px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    section .text h1 {
+        font-size: 70px;
+    }
+
+    section .text h1 span {
+        font-size: 14px;
+    }
+
+    .wishes {
+        font-size: 14px;
+        max-width: 300px;
+    }
+}
+/* Footer */
+footer {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 5;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 10px 0;
+    line-height: 1.6;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+footer p strong {
+    color: #ffd700;
+    font-weight: 600;
+}
+
+/* Media Queries for Footer */
+@media (max-width: 768px) {
+    footer {
+        font-size: 16px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    footer {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
